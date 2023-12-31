@@ -1,0 +1,38 @@
+#include "Arduino.h"
+
+#define COMMON_ANODE_PIN 0     // Replace with the actual pin connected to RGB LED Common Anode (connected to GND)
+#define RED_CATHODE_PIN PA1    // Replace with the actual pin connected to RGB LED Cathode (Red)
+#define GREEN_CATHODE_PIN PA2  // Replace with the actual pin connected to RGB LED Cathode (Green)
+#define BLUE_CATHODE_PIN PA3   // Replace with the actual pin connected to RGB LED Cathode (Blue)
+
+void setup() {
+  pinMode(COMMON_ANODE_PIN, OUTPUT);
+  pinMode(RED_CATHODE_PIN, OUTPUT);
+  pinMode(GREEN_CATHODE_PIN, OUTPUT);
+  pinMode(BLUE_CATHODE_PIN, OUTPUT);
+}
+
+void loop() {
+  // Turn on the RGB LED by setting the common anode pin LOW (connected to GND)
+  digitalWrite(COMMON_ANODE_PIN, LOW);
+
+  // Turn on the Red component
+  digitalWrite(RED_CATHODE_PIN, HIGH);
+  delay(250);
+  digitalWrite(RED_CATHODE_PIN, LOW);
+
+  // Turn on the Green component
+  digitalWrite(GREEN_CATHODE_PIN, HIGH);
+  delay(250);
+  digitalWrite(GREEN_CATHODE_PIN, LOW);
+
+  // Turn on the Blue component
+  digitalWrite(BLUE_CATHODE_PIN, HIGH);
+  delay(250);
+  digitalWrite(BLUE_CATHODE_PIN, LOW);
+
+  // Turn off the RGB LED by setting the common anode pin HIGH
+  digitalWrite(COMMON_ANODE_PIN, HIGH);
+
+  delay(250);  // Delay between cycles
+}
