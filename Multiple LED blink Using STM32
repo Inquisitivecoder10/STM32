@@ -1,0 +1,26 @@
+#include "Arduino.h"
+
+#define LED1_PIN PA0  // Replace with the actual pin connected to LED1
+#define LED2_PIN PA1  // Replace with the actual pin connected to LED2
+#define LED3_PIN PA2  // Replace with the actual pin connected to LED3
+void setup() {
+  pinMode(LED1_PIN, OUTPUT);
+  pinMode(LED2_PIN, OUTPUT);
+  pinMode(LED3_PIN, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(LED1_PIN, HIGH);  // Turn on LED1
+  delay(500);  // Delay for 500ms
+  digitalWrite(LED1_PIN, LOW);   // Turn off LED1
+
+  digitalWrite(LED2_PIN, HIGH);  // Turn on LED2
+  delay(500);  // Delay for 500ms
+  digitalWrite(LED2_PIN, LOW);   // Turn off LED2
+
+  digitalWrite(LED3_PIN, HIGH);  // Turn on LED3
+  delay(500);  // Delay for 500ms
+  digitalWrite(LED3_PIN, LOW);   // Turn off LED3
+
+ 
+}
